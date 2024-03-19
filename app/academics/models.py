@@ -14,16 +14,19 @@ class User(models.Model):
     updated_at = models.DateTimeField(default = datetime.datetime.now())
     deleted_at = models.DateTimeField(null = True, blank = True)
 
+    def __str__(self):
+        return self.email
+
 class Person(models.Model):
     firstname = models.CharField(max_length = 20) 
     lastname = models.CharField(max_length = 20)
-    id_ident_type = models.IntegerField()
+    #id_ident_type = models.IntegerField()
     age = models.IntegerField()
-    ident_exp_city = models.IntegerField()
-    address = models.CharField(max_length = 150)
-    mobile = models.CharField(max_length = 50)
+    #ident_exp_city = models.IntegerField()
+    #address = models.CharField(max_length = 150)
+    #mobile = models.CharField(max_length = 50)
     ident_number = models.CharField(max_length = 12, blank = True) # blank = true que acaepte valores null
-    id_user = models.IntegerField()
+    #,mid_user = models.IntegerField()
     created_at = models.DateTimeField(default = datetime.datetime.now())
     updated_at = models.DateTimeField(default = datetime.datetime.now())
     deleted_at = models.DateTimeField(null = True, blank = True)
